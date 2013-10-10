@@ -6,5 +6,7 @@ class KdevelopPhp < BaseKdeFormula
   sha1 'c047724c255417b361d3ce1898555c2b9183f5b2'
 
   depends_on 'kdevelop'
+  depends_on 'kdevelop-pg-qt'
+  depends_on 'kdevelop-php-docs'
   kde_build_deps
 end
