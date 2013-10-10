@@ -5,7 +5,7 @@ Homebrew tap to build KDevelop and Kate on Mac OS. Based on https://github.com/s
 You can tap this repository to your existing homebrew with "brew tap adymo/kde".
 
 Installation
---------------
+------------
 
 Prepare your environment:
 
@@ -40,7 +40,7 @@ Update system configuration:
 * open ~/Application/kdevelop.app
 
 Troubleshooting
---------------
+---------------
 
 * if kbuildsycoca4 never finishes, then stop dbus, remove its lock file (run "env | grep DBUS" to find out where it is) and start dbus again
 * if dbus fails to start, check whether you have /usr/local/etc/dbus-1/session.d directory
