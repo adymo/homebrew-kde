@@ -1,4 +1,4 @@
-require 'base_kde_formula'
+require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class Grantlee < BaseKdeFormula
   homepage 'http://grantlee.org/'

@@ -1,4 +1,4 @@
-require 'base_kde_formula'
+require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class Kate < BaseKdeFormula
   homepage 'http://kate-editor.org'
