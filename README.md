@@ -1,16 +1,17 @@
 Alexander Dymo's Homebrew
 =========================
-Homebrew distribution to build KDevelop and Kate on Mac OS. Based on https://github.com/somekool/homebrew but actually works. Note, this is not a full KDE distribution. It contains only KDE apps I use (which is KDevelop and Kate).
+Homebrew tap to build KDevelop and Kate on Mac OS. Based on https://github.com/somekool/homebrew but actually works. Note, this is not a full KDE distribution. It contains only KDE apps I use (which is KDevelop and Kate).
 
-This is a clone of official repository at https://github.com/mxcl/homebrew with an addition of KDevelop and Kate apps. I keep it updated as much as possible so you can use it as your homebrew repo instead of official one.
+You can tap this repository to your existing homebrew with "brew tap adymo/kde".
 
 Installation
-* cd /usr/local
-* git clone https://github.com/adymo/homebrew .
 * prepend /usr/local/bin to your PATH in ~/.bash_profile (note, it's important that your setting extends $PATH, not replaces it, otherwise things will not compile with strange errors)  
   <code>export PATH=/usr/local/bin:$PATH</code>
 * . ~/.bash_profile
+* brew tap adymo/kde
+* brew uninstall qt && brew install adymo/kde/qt (do this if you have qt installed, kde requires qt compiled from source with additional options)
 * brew install kdevelop
+* brew install kdevelop-ruby
 * mkdir -p ~/Library/LaunchAgents
 * cp <dbus cellar dir>/org.freedesktop.dbus-session.plist ~/Library/LaunchAgents/
 * launchctl load -w ~/Library/LaunchAgents/org.freedesktop.dbus-session.plist
