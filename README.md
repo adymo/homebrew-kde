@@ -28,16 +28,25 @@ Install KDevelop and (optionally) additional language support plugins
 * brew install kdevelop-ruby
 
 Launch D-Bus
+
 * mkdir -p ~/Library/LaunchAgents
-* cp <dbus cellar dir>/org.freedesktop.dbus-session.plist ~/Library/LaunchAgents/
+* cp /usr/local/Cellar/d-bus/&lt;version&gt;/org.freedesktop.dbus-session.plist ~/Library/LaunchAgents/
 * launchctl load -w ~/Library/LaunchAgents/org.freedesktop.dbus-session.plist
 
 Update system configuration:
 
 * restart your system (optional, but helps prevent various dbus-related problems)
 * kbuildsycoca4 --noincremental
-* update-mime-types /usr/local/share/mime
+* update-mime-database /usr/local/share/mime
+
+Create application links (so that Finder and Launchpad see KDevelop and Kate apps):
+
+* brew linkapps
+
+Run KDevelop and Kate from Launchpad or from command line:
+
 * open ~/Application/kdevelop.app
+* open ~/Application/kate.app
 
 Troubleshooting
 ---------------
