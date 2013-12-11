@@ -22,10 +22,11 @@ Install Qt from my tap (kde requires qt compiled from source with additional opt
 * brew uninstall qt
 * brew install adymo/kde/qt 
 
-Install KDevelop and (optionally) additional language support plugins
+Install KDevelop, Kate and (optionally) additional language support plugins
 
 * brew install kdevelop
 * brew install kdevelop-ruby
+* brew install kate
 
 Launch D-Bus
 
