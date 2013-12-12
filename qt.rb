@@ -2,8 +2,15 @@ require 'formula'
 
 class Qt < Formula
   homepage 'http://qt-project.org/'
-  url 'http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz'
-  sha1 '745f9ebf091696c0d5403ce691dc28c039d77b9e'
+  if MacOS.version < :mavericks
+    url 'http://download.qt-project.org/official_releases/qt/4.8/4.8.5/qt-everywhere-opensource-src-4.8.5.tar.gz'
+    sha1 '745f9ebf091696c0d5403ce691dc28c039d77b9e'
+  else
+    # Use latest Qt with MacOS 10.9 patches. Upgrade to 4.8.6 once it's released (January 2014).
+    url 'https://github.com/qtproject/qt/archive/4.8.tar.gz'
+    # no sha1
+    version '4.8.5'
+  end
 
   head 'git://gitorious.org/qt/qt.git', :branch => '4.8'
 
