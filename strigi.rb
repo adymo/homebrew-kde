@@ -10,6 +10,14 @@ class Strigi < BaseKdeFormula
   depends_on 'd-bus'
   depends_on 'exiv2' => :optional
 
+  def patches
+    if MacOS.version >= :mavericks
+      # Fix "reference to 'mutex' is ambiguous" error
+      # MacPorts issue: https://trac.macports.org/ticket/41152
+      {:p0 => 'https://trac.macports.org/raw-attachment/ticket/41152/patch-libstreamanalyzer-plugins-endplugins-ffmpegendanalyzer.cpp.diff'}
+    end
+  end
+
   def extra_cmake_args
     "-DENABLE_EXPAT:BOOL=ON"
   end
