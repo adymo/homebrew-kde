@@ -10,5 +10,11 @@ class Digikam < BaseKdeFormula
   depends_on 'opencv'
   depends_on 'marble'
   depends_on 'libkexiv2'
+  depends_on 'lensfun'
+  depends_on 'libgphoto2'
+  depends_on 'liblqr'
+  depends_on 'libusb'
+  depends_on 'jasper'
+
   kde_build_deps
 end
