@@ -9,7 +9,7 @@ class Qt < Formula
     # Use latest Qt with MacOS 10.9 patches. Upgrade to 4.8.6 once it's released (January 2014).
     url 'https://github.com/qtproject/qt/archive/4.8.tar.gz'
     # no sha1
-    version '4.8.5'
+    version '4.8.5.1'
   end
 
   head 'git://gitorious.org/qt/qt.git', :branch => '4.8'
