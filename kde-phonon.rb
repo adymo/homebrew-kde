@@ -2,9 +2,8 @@ require 'formula'
 
 class KdePhonon < Formula
   homepage 'http://phonon.kde.org/'
-  # yes, phonon-src is only shipped as .tar.xz file.
-  url 'ftp://ftp.kde.org/pub/kde/stable/phonon/4.6.0/src/phonon-4.6.0.tar.xz'
-  md5 'bbe0c1c62ed14c31479c4c1a6cf1e173'
+  url 'http://download.kde.org/stable/phonon/4.6.0/src/phonon-4.6.0.tar.xz'
+  sha1 'd8dbc188b58c6dd9c6a73d3742a25291e647bb95'
 
   depends_on 'xz' => :build
   depends_on 'cmake' => :build
