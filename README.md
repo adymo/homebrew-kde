@@ -17,10 +17,10 @@ Tap my KDE repository:
 
 * brew tap adymo/kde
 
-Install Qt from my tap (kde requires qt compiled from source with additional options like dbus and qt3support):
+Compile Qt with D-Bus and Qt3 support if you haven't done that before.
 
 * brew uninstall qt
-* brew install adymo/kde/qt 
+* brew install qt --with-d-bus --with-qt3support
 
 Install KDevelop, Kate and (optionally) additional language support plugins
 
