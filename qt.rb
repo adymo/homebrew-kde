@@ -47,7 +47,15 @@ class Qt < Formula
 
     args << "-L#{MacOS::X11.lib}" << "-I#{MacOS::X11.include}" if MacOS::X11.installed?
 
-    args << "-platform" << "unsupported/macx-clang" if ENV.compiler == :clang
+    if ENV.compiler == :clang
+      args << "-platform"
+
+      if MacOS.version >= :mavericks
+        args << "unsupported/macx-clang-libc++"
+      else
+        args << "unsupported/macx-clang"
+      end
+    end
 
     args << "-plugin-sql-mysql" if build.with? 'mysql'
 
