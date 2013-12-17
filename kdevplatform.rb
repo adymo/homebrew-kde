@@ -28,3 +28,21 @@ __END__
      }
 
      return projectRoot;
+--- a/util/google/sparsehash/sparseconfig.h
++++ b/util/google/sparsehash/sparseconfig.h
+@@ -5,13 +5,13 @@
+ #define GOOGLE_NAMESPACE ::google
+
+ /* the location of <hash_fun.h>/<stl_hash_fun.h> */
+-#define HASH_FUN_H "hash_fun.h"
++#define HASH_FUN_H <functional>
+
+ /* the location of <hash_map> */
+ #define HASH_MAP_H <ext/hash_map>
+
+ /* the namespace of hash_map/hash_set */
+-#define HASH_NAMESPACE __gnu_cxx
++#define HASH_NAMESPACE std
+
+ /* the location of <hash_set> */
+ #define HASH_SET_H <ext/hash_set>
