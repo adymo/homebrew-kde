@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class Kdevelop < BaseKdeFormula
   homepage 'http://kdevelop.org/'
-  url 'http://download.kde.org/stable/kdevelop/4.5.1/src/kdevelop-4.5.1.tar.bz2'
-  sha1 'e27b77bca0b4c466f66b24167ec416f20b353f6f'
+  url 'http://download.kde.org/stable/kdevelop/4.6.0/src/kdevelop-4.6.0.tar.xz'
+  sha1 '2b723c3e16c41dbcd9817336893eff85712cb11d'
   depends_on 'kdevplatform'
   depends_on 'kde-runtime'
   kde_build_deps
