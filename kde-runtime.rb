@@ -34,3 +34,15 @@ __END__
 +# add_subdirectory(kglobalaccel)
  add_subdirectory(knotify)
  add_subdirectory(ktimezoned)
+
+--- a/kwalletd/kwalletd.h
++++ b/kwalletd/kwalletd.h
+@@ -184,7 +184,7 @@
+	void processTransactions();
+	void activatePasswordDialog();
+ #ifdef Q_WS_X11
+-        void connectToScreenSaver();
++#        void connectToScreenSaver();
+ #endif
+
+    private:
