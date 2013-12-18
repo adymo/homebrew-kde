@@ -46,8 +46,8 @@ Create application links (so that Finder and Launchpad see KDevelop and Kate app
 
 Run KDevelop and Kate from Launchpad or from command line:
 
-* open ~/Application/kdevelop.app
-* open ~/Application/kate.app
+* open ~/Applications/kdevelop.app
+* open ~/Applications/kate.app
 
 Troubleshooting
 ---------------
