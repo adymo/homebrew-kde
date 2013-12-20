@@ -58,6 +58,7 @@ class Calligra < BaseKdeFormula
 
     mkdir 'calligra-build' do
       args = kde_default_cmake_args
+      args << "-DEIGEN2_INCLUDE_DIR=#{prefix}/include/eigen2"
       args << "-DPRODUCTSET=osx"
       args << ".."
       system "cmake", *args
