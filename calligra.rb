@@ -9,7 +9,7 @@ end
 class Calligra < BaseKdeFormula
   homepage 'http://www.calligra.org/'
   version '2.8'
-  #url 'http://download.kde.org/stable/calligra-2.7.3/calligra-2.7.3.tar.xz'
+  #url 'http://download.kde.org/unstable/calligra-2.7.90/calligra-2.7.90.tar.xz'
   #sha1 'd689cedd838a5b0f81f3a50ba6dfb5f7d35d9f08'
   url 'git://anongit.kde.org/calligra.git', :branch => 'calligra/2.8'
   head 'git://anongit.kde.org/calligra.git', :branch => 'master'
@@ -27,7 +27,6 @@ class Calligra < BaseKdeFormula
   depends_on 'glew'
   depends_on 'fftw'
   #depends_on 'opencolorio'
-  depends_on 'exiv2'
   depends_on 'kdepimlibs' => :optional
   depends_on 'libodfgen' => :optional
   depends_on 'libwps' => :optional
