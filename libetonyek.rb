@@ -7,7 +7,9 @@ class Libetonyek < Formula
 
   depends_on 'pkg-config' => :build
   depends_on 'boost' => :build
-  depends_on 'librevenge'
+  depends_on 'libtool' => :build
+  depends_on 'autoconf' => :build
+  depends_on 'automake' => :build
 
   def install
     system "./autogen.sh"
