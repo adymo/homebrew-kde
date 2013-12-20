@@ -26,7 +26,7 @@ class Calligra < BaseKdeFormula
   depends_on 'little-cms2'
   depends_on 'glew'
   depends_on 'fftw'
-  depends_on 'opencolorio'
+  #depends_on 'opencolorio'
   depends_on 'exiv2'
   depends_on 'kdepimlibs' => :optional
   depends_on 'libodfgen' => :optional
