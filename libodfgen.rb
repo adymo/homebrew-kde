@@ -20,7 +20,8 @@ class Libodfgen < Formula
                           "--disable-dependency-tracking",
                           "--enable-static=no",
                           "--with-sharedptr=boost",
-                          "--disable-werror"
+                          "--disable-werror",
+                          "--prefix=#{prefix}"
     system "make install"
   end
 end

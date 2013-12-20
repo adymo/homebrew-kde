@@ -10,6 +10,7 @@ class Libetonyek < Formula
   depends_on 'libtool' => :build
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build
+  depends_on 'libwpd'
 
   def install
     system "./autogen.sh"
@@ -17,7 +18,10 @@ class Libetonyek < Formula
                           "--disable-dependency-tracking",
                           "--enable-static=no",
                           "--disable-werror",
-                          "--disable-tests"
+                          "--disable-tests",
+                          "--prefix=#{prefix}"
+    system "make"
+    ENV.deparallelize # Needs a serialized install
     system "make install"
   end
 end
