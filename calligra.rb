@@ -8,6 +8,7 @@ end
 
 class Calligra < BaseKdeFormula
   homepage 'http://www.calligra.org/'
+  version '2.8'
   #url 'http://download.kde.org/stable/calligra-2.7.3/calligra-2.7.3.tar.xz'
   #sha1 'd689cedd838a5b0f81f3a50ba6dfb5f7d35d9f08'
   url 'git://anongit.kde.org/calligra.git', :branch => '2.8'

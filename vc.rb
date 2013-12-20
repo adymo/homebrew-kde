@@ -2,6 +2,7 @@ require 'formula'
 
 class Vc < Formula
   homepage 'http://code.compeng.uni-frankfurt.de/projects/vc/'
+  version '0.7git'
   url 'git://code.compeng.uni-frankfurt.de/vc.git', :branch => '0.7'
   head 'git://code.compeng.uni-frankfurt.de/vc.git', :branch => 'master'
 

@@ -2,6 +2,7 @@ require 'formula'
 
 class Librevenge < Formula
   homepage 'http://sf.net/p/libwpd/librevenge/'
+  version '0.0.0git'
   url 'git://git.code.sf.net/p/libwpd/librevenge', :branch => 'master'
 
   depends_on 'pkg-config' => :build
