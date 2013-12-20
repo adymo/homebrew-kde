@@ -46,6 +46,7 @@ class Calligra < BaseKdeFormula
   #depends_on 'libqtgtl' => :optional
 
   def install
+    ENV['MAKEFLAGS'] = "-j4"
     Eigen2.new.brew do
       mkdir 'eigen-build' do
         args = std_cmake_args
@@ -61,7 +62,6 @@ class Calligra < BaseKdeFormula
       args << "-DPRODUCTSET=osx"
       args << ".."
       system "cmake", *args
-      ENV.j4
       system "make install"
       touch "#{prefix}/.installed"
     end
