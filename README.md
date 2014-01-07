@@ -31,7 +31,7 @@ Install KDevelop, Kate and (optionally) additional language support plugins
 Launch D-Bus
 
 * mkdir -p ~/Library/LaunchAgents
-* cp /usr/local/Cellar/d-bus/&lt;version&gt;/org.freedesktop.dbus-session.plist ~/Library/LaunchAgents/
+* ln -s /usr/local/opt/d-bus/org.freedesktop.dbus-session.plist ~/Library/LaunchAgents/
 * launchctl load -w ~/Library/LaunchAgents/org.freedesktop.dbus-session.plist
 
 Update system configuration:
