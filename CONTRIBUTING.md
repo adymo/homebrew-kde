@@ -5,8 +5,8 @@ Firstly, consult [Homebrew's contribution guidelines][homebrew].
 homebrew-kde favours the following conventions:
 
 * **Hand-picked formulae**. Please only contribute new formulae for apps you use
-  and are willing to maintain. See somekool/homebrew if you're looking for an
-  all-inclusive approach.
+  and are willing to maintain. See [somekool/homebrew][somekool] if you're
+  looking for an all-inclusive approach.
 
 * **Inline patches**. Unless patches are already maintained by a well-known
   source (such as Macports), we prefer patches be included within the formula
@@ -17,4 +17,5 @@ homebrew-kde favours the following conventions:
 Thanks!
 
 [homebrew]: https://github.com/Homebrew/homebrew/blob/master/CONTRIBUTING.md
+[somekool]: https://github.com/somekool/homebrew
 [patch]: https://github.com/Homebrew/homebrew/wiki/Formula-Cookbook#patches
