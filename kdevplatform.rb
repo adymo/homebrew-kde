@@ -37,7 +37,8 @@ __END__
 +#ifdef _LIBCPP_VERSION
 +#define HASH_FUN_H <functional>
 +#else
- #define HASH_FUN_H "hash_fun.h"
+-#define HASH_FUN_H "hash_fun.h"
++#define HASH_FUN_H "ext/hash_fun.h"
 +#endif
 
  /* the location of <hash_map> */
