@@ -12,8 +12,9 @@ Installation
 Prepare your environment:
 
 * prepend /usr/local/bin to your PATH in ~/.bash_profile (note, it's important that your setting extends $PATH, not replaces it, otherwise things will not compile with strange errors)  
-  <code>export PATH=/usr/local/bin:$PATH</code>
+  <code>export PATH=/usr/local/kde4/bin:$PATH</code>
 * . ~/.bash_profile
+* If you've used this tap before Feb 17, 2014, those kde stuff were installed to /usr/local and uninstallable. Your best choice would be make a backup to homebrew and everything else installed to /usr/local, nuke everything in /usr/local directory and reinstall homebrew and everything else. Sorry for the inconvenience. Currently all kde stuff installed to /usr/local/kde4 so in future you just need to nuke that directory when uninstall. We're working on a solution to install kde formulas to their own kegs.
 
 Tap my KDE repository:
 
@@ -40,7 +41,7 @@ Update system configuration:
 
 * restart your system (optional, but helps prevent various dbus-related problems)
 * kbuildsycoca4 --noincremental
-* update-mime-database /usr/local/share/mime
+* update-mime-database /usr/local/kde4/share/mime
 
 Create application links (so that Finder and Launchpad see KDevelop and Kate apps):
 
@@ -56,5 +57,5 @@ Troubleshooting
 
 * if kbuildsycoca4 never finishes, then stop dbus, remove its lock file (run "env | grep DBUS" to find out where it is) and start dbus again
 * if dbus fails to start, check whether you have /usr/local/etc/dbus-1/session.d directory
-* if something does not compile, make sure you do not override $PATH in .bash_profile, but rather prepend /usr/local/bin to it like this:  
-  <code>export PATH=/usr/local/bin:$PATH</code>
+* if something does not compile, make sure you do not override $PATH in .bash_profile, but rather prepend /usr/local/kde4/bin to it like this:  
+  <code>export PATH=/usr/local/kde4/bin:$PATH</code>
