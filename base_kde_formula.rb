@@ -8,7 +8,7 @@ class BaseKdeFormula < Formula
   end
 
   def kdedir
-    "/usr/local"
+    "/usr/local/kde4"
   end
   def kdelibs_prefix
     Formula.factory('kdelibs').prefix
