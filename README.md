@@ -16,7 +16,8 @@ export KDEDIRS=$KDEDIRS:$HOME/Library/Preferences/KDE:/usr/local/kde4
 export PATH=/usr/local/kde4/bin:$PATH
 export DYLD_LIBRARY_PATH=/usr/local/kde4/lib:$DYLD_LIBRARY_PATH
 launchctl setenv DYLD_LIBRARY_PATH /usr/local/kde4/lib:$DYLD_LIBRARY_PATH
-export XDG_DATA_HOME=/usr/local/kde4/share
+export XDG_DATA_HOME=$HOME/Library/Preferences/KDE/share
+export XDG_DATA_DIRS=/usr/local/kde4/share:/usr/local/share:/usr/share
 ```
 * If you were using this tap before Feb 17, 2014, kde stuff were installed to `/usr/local` and you cannot uninstall them. Which means your `/usr/local` is already messed up. Please backup everything important, `sudo rm -rf /usr/local/*`, reinstall homebrew and all your formulas, and anything else you put under `/usr/local`.
 * Now kde stuff are installed to `/usr/local/kde4`, you still cannot uninstall single kde formula, but you can safely nuke that directory and reinstall kde formulas you want to keep. 
