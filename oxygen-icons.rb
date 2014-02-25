@@ -1,9 +1,14 @@
-require File.join(File.dirname(__FILE__), 'base_kde_formula')
+require 'formula'
 
-class OxygenIcons < BaseKdeFormula
+class OxygenIcons < Formula
   homepage 'http://www.oxygen-icons.org'
-  url 'http://download.kde.org/stable/4.11.4/src/oxygen-icons-4.11.4.tar.xz'
-  sha1 '52350a2c230142b078dc5dfe95503ec82025c34d'
+  url 'http://download.kde.org/stable/4.12.2/src/oxygen-icons-4.12.2.tar.xz'
+  sha1 '5675835df6bacad7231ad21f1839a4fc753289ff'
+  
+  depends_on 'cmake' => :build
 
-  kde_build_deps
+  def install
+    system "cmake #{std_cmake_parameters} ."
+    system "make install"
+  end
 end
