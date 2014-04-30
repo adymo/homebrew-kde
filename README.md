@@ -47,7 +47,8 @@ Launch D-Bus
 
 ```
 mkdir -p ~/Library/LaunchAgents
-ln -s /usr/local/opt/d-bus/org.freedesktop.dbus-session.plist ~/Library/LaunchAgents/
+# substitute Cellar/d-bus/1.8.0 below with your actual dbus installation dir
+ln -s /usr/local/Cellar/d-bus/1.8.0/org.freedesktop.dbus-session.plist ~/Library/LaunchAgents
 launchctl load -w ~/Library/LaunchAgents/org.freedesktop.dbus-session.plist
 ```
 
