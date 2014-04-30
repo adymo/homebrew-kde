@@ -15,8 +15,8 @@ class Kate < BaseKdeFormula
 end
 
 __END__
---- kwrite/kwritemain.h
-+++ kwrite/kwritemain.h
+--- a/kwrite/kwritemain.h
++++ b/kwrite/kwritemain.h
 @@ -44,7 +44,7 @@
  class KRecentFilesAction;
  class KSqueezedTextLabel;
