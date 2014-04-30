@@ -8,4 +8,22 @@ class Kate < BaseKdeFormula
   depends_on 'kdelibs'
   depends_on 'kde-runtime'
   kde_build_deps
+
+  def patches
+    DATA
+  end
 end
+
+__END__
+--- kwrite/kwritemain.h
++++ kwrite/kwritemain.h
+@@ -44,7 +44,7 @@
+ class KRecentFilesAction;
+ class KSqueezedTextLabel;
+
+-class KWrite : public KParts::MainWindow
++class KTEXTEDITOR_EXPORT KWrite : public KParts::MainWindow
+ {
+   Q_OBJECT
+
+
