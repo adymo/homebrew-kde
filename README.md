@@ -27,7 +27,14 @@ Tap my KDE repository:
 
 `brew tap adymo/kde`
 
-Compile Qt with D-Bus and Qt3 support if you haven't done that before.
+Recompile D-Bus from sources. Default installations from bottles is broken and is missing important configuration files.
+
+```
+brew uninstall dbus
+brew install dbus --build-from-source
+```
+
+Compile Qt with D-Bus and Qt3 support. KDE will not work without that.
 
 ```
 brew uninstall qt
@@ -80,3 +87,4 @@ Troubleshooting
 * if kbuildsycoca4 never finishes, then stop dbus, remove its lock file (run `env | grep DBUS` to find out where it is) and start dbus again
 * if dbus fails to start, check whether you have `/usr/local/etc/dbus-1/session.d` directory
 * sometimes after App Store run upgrades, `DYLD_LIBRARY_PATH` will be reset, then some plugins will fail to load, run `launchctl setenv DYLD_LIBRARY_PATH /usr/local/kde4/lib:$DYLD_LIBRARY_PATH` in terminal to fix
+* if kbuildsycoca or any other KDE app hangs during start, make sure you recompile dbus from sources as described above
