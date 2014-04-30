@@ -11,6 +11,7 @@ class KdeRuntime < BaseKdeFormula
   depends_on 'nepomuk-core'
   depends_on 'kdepimlibs'
   depends_on 'kactivities'
+  depends_on 'libgcrypt'
   kde_build_deps
 
   def patches
