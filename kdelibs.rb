@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class Kdelibs < BaseKdeFormula
   homepage 'http://www.kde.org/'
-  url 'http://download.kde.org/stable/4.12.3/src/kdelibs-4.12.3.tar.xz'
-  sha1 '57a9685d9c05f9304b0037f578bc13ca3371e74d'
+  url 'http://download.kde.org/stable/4.13.0/src/kdelibs-4.13.0.tar.xz'
+  sha1 '8f2cccbadc869a7c5e7371d45ce2a767b98a9f6a'
 
   kde_build_deps
   depends_on 'gettext'
