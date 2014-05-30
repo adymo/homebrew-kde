@@ -12,13 +12,14 @@ class Librevenge < Formula
   depends_on 'automake' => :build
 
   def install
-    system "./autogen.sh"
+    puts "to workaround boost 1.55.0 bug, install with --cc=gcc-4.8"
     system "./configure", "--without-docs",
                           "--disable-dependency-tracking",
                           "--enable-static=no",
                           "--disable-werror",
                           "--disable-tests",
                           "--prefix=#{prefix}"
+    
     system "make"
     ENV.deparallelize # Needs a serialized install
     system "make install"
