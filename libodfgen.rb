@@ -2,8 +2,8 @@ require 'formula'
 
 class Libodfgen < Formula
   homepage 'http://sf.net/p/libwpd/libodfgen/'
-  url 'http://dev-www.libreoffice.org/src/libodfgen-0.0.4.tar.bz2'
-  sha1 '78deefd6b9db4a97c90bec16b0ab139ed187892a'
+  url 'http://dev-www.libreoffice.org/src/libodfgen-0.1.0.tar.bz2'
+  sha1 'e901a0aabaab83fbe8665f477e7f3655c5a38031'
 
   depends_on 'pkg-config' => :build
   depends_on 'boost' => :build
@@ -11,11 +11,11 @@ class Libodfgen < Formula
   depends_on 'autoconf' => :build
   depends_on 'automake' => :build
   depends_on 'libwpd'
+  depends_on 'librevenge'
   depends_on 'libwpg'
   depends_on 'libetonyek'
 
   def install
-    system "./autogen.sh"
     system "./configure", "--without-docs",
                           "--disable-dependency-tracking",
                           "--enable-static=no",

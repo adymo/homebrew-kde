@@ -2,8 +2,8 @@ require 'formula'
 
 class Libvisio < Formula
   homepage 'http://www.freedesktop.org/wiki/Software/libvisio/'
-  url 'http://dev-www.libreoffice.org/src/libvisio-0.0.31.tar.xz'
-  sha1 'c494799dac0931c97ec3e45569f92dcae2969b89'
+  url 'http://dev-www.libreoffice.org/src/libvisio-0.1.0.tar.xz'
+  sha1 'c82e5c7ad25e513c268032cda9febd01b8879504'
 
   depends_on 'pkg-config' => :build
   depends_on 'boost' => :build
@@ -13,10 +13,9 @@ class Libvisio < Formula
   depends_on 'libwpd'
   depends_on 'libwpg'
   depends_on 'icu4c'
+  depends_on 'librevenge'
 
   def install
-    icu4c = Formula.factory('icu4c')
-    system "./autogen.sh"
     system "./configure", "--without-docs",
                           "-disable-dependency-tracking",
                           "--enable-static=no",
