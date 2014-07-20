@@ -1,6 +1,6 @@
 require "formula"
 
-class KdelibsStripped < formula
+class KdelibsStripped < Formula
   homepage "http://quickgit.kde.org/?p=clones/kdelibs/rempt/kdelibs-stripped.git"
   url "https://downloads.sourceforge.net/project/kdelibs-stripped/kdelibs-stripped-4.12.zip"
   sha1 "fce2b07e47facb7e627818fb31203cd7a5300246"
