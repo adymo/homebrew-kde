@@ -48,6 +48,8 @@ class Calligra < Formula
 
   def install
     cmake_args = std_cmake_args
+    cmake_args << ".."
+    cmake_args << "-DKDEDIRS=#{prefix}"
     cmake_args << "-DCMAKE_PREFIX_PATH=/usr/local/opt/gettext"
     #cmake_args << "-DQCA2_INCLUDE_DIR=/usr/local/opt/qca/lib/"
     cmake_args << "-DOPENEXR_INCLUDE_DIR=/usr/local/include/OpenEXR/"
@@ -55,8 +57,8 @@ class Calligra < Formula
     cmake_args << "-DBUILD_doc=false"
     cmake_args << "-DKDE_DEFAULT_HOME=Library/Preferences/Calligra"
 
-    KdelibsStripped.new.brew do
-      mkdir 'kdelibs-stripped-build' do
+    KdelibsStripped.new("kdelibs-stripped", Pathname.new(__FILE__).expand_path, :stable).brew do
+      mkdir "build" do
         system "cmake", *cmake_args, "-DBUNDLE_INSTALL_DIR=."
         system "make", "install"
       end
