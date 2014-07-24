@@ -3,7 +3,7 @@ require "formula"
 class KdelibsStripped < Formula
   homepage "http://quickgit.kde.org/?p=clones/kdelibs/rempt/kdelibs-stripped.git"
   url "https://downloads.sourceforge.net/project/kdelibs-stripped/kdelibs-stripped-4.12.zip"
-  sha1 "fce2b07e47facb7e627818fb31203cd7a5300246"
+  sha1 "1c1f4365b7db0bdb1e225e63235e77a604ce7ee8"
 end
 class Calligra < Formula
   homepage "http://www.calligra.org/"
