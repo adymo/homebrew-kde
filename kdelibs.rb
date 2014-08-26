@@ -32,8 +32,6 @@ class Kdelibs < BaseKdeFormula
       "http://svn.macports.org/repository/macports/trunk/dports/kde/kdelibs4/files/default-kde4-xdg-menu-prefix.patch",
       "http://svn.macports.org/repository/macports/trunk/dports/kde/kdelibs4/files/workaround-kdeinit4-crash.patch",
       "http://svn.macports.org/repository/macports/trunk/dports/kde/kdelibs4/files/patch-cmake-modules-FindKDE4-Internal.cmake.diff",
-      "http://svn.macports.org/repository/macports/trunk/dports/kde/kdelibs4/files/patch-cmake-modules-FindPhonon.cmake.diff",
-      "http://svn.macports.org/repository/macports/trunk/dports/kde/kdelibs4/files/patch-cmake-modules-FindQt4.cmake.diff",
       "https://gist.githubusercontent.com/philacs/9297176/raw/08f340d94a91398507ad82a8af6227cc68f0ea29/kaboutdialog-osx-beautifier-kdelibs.diff"
     ]}
   end
