@@ -20,7 +20,7 @@ class Kdelibs < BaseKdeFormula
   depends_on 'docbook'
   depends_on 'docbook-xsl'
   depends_on 'd-bus'
-  depends_on 'qt'
+  depends_on 'qt' => ["with-d-bus", "with-qt3support"]
   depends_on 'libdbusmenu-qt'
   depends_on 'aspell' => :optional
   depends_on 'enchant' => :optional

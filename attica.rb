@@ -6,7 +6,7 @@ class Attica < Formula
   sha1 '5ae4adcb99db839902b70afd3d1cc7fd471bacd7'
   
   depends_on 'cmake' => :build
-  depends_on 'qt'
+  depends_on 'qt' => ["with-d-bus", "with-qt3support"]
 
   def install
     system "cmake #{std_cmake_parameters} ."

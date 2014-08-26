@@ -9,7 +9,7 @@ class Akonadi < BaseKdeFormula
   depends_on 'mysql'
   depends_on 'soprano'
   depends_on 'boost'
-  depends_on 'qt'
+  depends_on 'qt' => ["with-d-bus", "with-qt3support"]
 
   kde_build_deps
 

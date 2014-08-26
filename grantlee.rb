@@ -7,5 +7,5 @@ class Grantlee < BaseKdeFormula
   sha1 '19763bc1dafb8aa6843660b1dd75fcc7fa67c0f4'
 
   kde_build_deps
-  depends_on 'qt'
+  depends_on 'qt' => ["with-d-bus", "with-qt3support"]
 end

@@ -6,7 +6,7 @@ class Soprano < Formula
   sha1 '97bd76df4a9f9336358dd9d7175c72b84d4ec6a0'
 
   depends_on 'cmake' => :build
-  depends_on 'qt'
+  depends_on 'qt' => ["with-d-bus", "with-qt3support"]
   depends_on 'clucene'
   depends_on 'raptor'
   depends_on 'redland'
