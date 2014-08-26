@@ -2,8 +2,8 @@ require 'formula'
 
 class OxygenIcons < Formula
   homepage 'http://www.oxygen-icons.org'
-  url 'http://download.kde.org/stable/4.13.0/src/oxygen-icons-4.13.0.tar.xz'
-  sha1 'e43fd0a6ec385943ef4cef7e22c2770a924ff01c'
+  url 'http://download.kde.org/stable/4.14.0/src/oxygen-icons-4.14.0.tar.xz'
+  sha1 'bc3d640258504c418e0445c25760b917f5f437cc'
   
   depends_on 'cmake' => :build
 

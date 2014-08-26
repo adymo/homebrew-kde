@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class Akonadi < BaseKdeFormula
   homepage 'http://pim.kde.org/akonadi/'
-  url 'http://download.kde.org/stable/akonadi/src/akonadi-1.12.1.tar.bz2'
-  sha1 '1ad560a83f08521592b1041c49b5415ffbb2581b'
+  url 'http://download.kde.org/stable/akonadi/src/akonadi-1.13.0.tar.bz2'
+  sha1 '9d594b5840e2e5d90057a7e5d8545004a3476bc0'
 
   depends_on 'shared-mime-info'
   depends_on 'mysql'
