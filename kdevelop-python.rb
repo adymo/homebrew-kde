@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class KdevelopPython < BaseKdeFormula
   homepage 'http://kdevelop.org/'
-  url 'http://download.kde.org/stable/kdevelop/kdev-python/1.6.1/src/kdev-python-v1.6.1-py3.tar.xz'
-  sha1 '9fcb3250fe966ed86c26493ff4b341373c7ed018'
+  url 'http://download.kde.org/stable/kdevelop/4.7.0/src/kdev-python-1.7.0.tar.xz'
+  sha1 '559dc7f8c3a69844af92eb581b7205346b2fcd10'
 
   def patches
     DATA
@@ -76,3 +76,22 @@ __END__
  
  
  SOVERSION=1.0
+--- a/pythonlanguagesupport.cpp
++++ b/pythonlanguagesupport.cpp
+@@ -186,10 +186,14 @@
+     autopep8.setOverrideSample("class klass:\n def method(arg1,arg2):\n  a=3+5\n"
+                                "def function(arg,*vararg,**kwargs): return arg+kwarg[0]\nfunction(3, 5, 7)");
+     using P = SourceFormatterStyle::MimeHighlightPair;
+-    autopep8.setMimeTypes(SourceFormatterStyle::MimeList{ P{"text/x-python", "Python"} });
++    SourceFormatterStyle::MimeList list;
++    list << P{"text/x-python", "Python"};
++    autopep8.setMimeTypes(list);
+     autopep8.setContent("/usr/bin/pep8ify -w $TMPFILE");
+
+-    return SourceFormatterItemList{SourceFormatterStyleItem{"customscript", autopep8}};
++    SourceFormatterItemList result;
++    result << SourceFormatterStyleItem{"customscript", autopep8};
++    return result;
+ }
+
+ KDevelop::ILanguage *LanguageSupport::language()
