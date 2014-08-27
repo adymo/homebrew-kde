@@ -2,7 +2,14 @@ Alexander Dymo's Homebrew
 =========================
 Homebrew tap to build KDE apps on Mac OS. Based on https://github.com/somekool/homebrew but actually works. Note, this is not a full KDE distribution. It contains only KDE apps that this project's maintainers actually use.
 
-Available apps: KDevelop, Kate, Calligra, Konversation
+Available stable apps:
+- KDevelop
+- Kate
+- Konversation
+- Massif Visualizer
+
+Experimental apps:
+- Calligra
 
 Installation
 ------------
