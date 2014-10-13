@@ -61,16 +61,16 @@ class Calligra < Formula
     resource("kdelibs-stripped").stage do
       mkdir "build" do
         system "export #{kdedirs}"
-        system "cmake", *cmake_args, "-DBUNDLE_INSTALL_DIR=."
+        system "cmake", "-DBUNDLE_INSTALL_DIR=.", *cmake_args
         system "make", "install"
       end
     end
 
     mkdir "build" do
       system "export #{kdedirs}"
-      system "cmake", *cmake_args,
-                      "-DBUNDLE_INSTALL_DIR=#{bin}",
-                      "-DPRODUCTSET=OSX"
+      system "cmake", "-DBUNDLE_INSTALL_DIR=#{bin}",
+                      "-DPRODUCTSET=OSX",
+                      *cmake_args
       system "make", "install"
     end
   end
