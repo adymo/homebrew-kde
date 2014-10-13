@@ -63,7 +63,7 @@ class Kdelibs < BaseKdeFormula
       Enable QtDBus module (--with-qtdbus) and Qt3Support module (--with-qt3support)
       in qt formula first to avoid errors in kdevplatform and kdevelop formulas.
     EOS
-    default_install
+    super
   end
 
   def caveats; <<-EOS.undent

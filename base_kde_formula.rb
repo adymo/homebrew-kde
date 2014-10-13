@@ -74,7 +74,7 @@ class BaseKdeFormula < Formula
     end
   end
 
-  def default_install
+  def install
     ENV.x11
     ENV['MAKEFLAGS'] = "-j4"
     mkdir 'build'
@@ -83,9 +83,6 @@ class BaseKdeFormula < Formula
     system "make"
     system "make install"
     touch "#{prefix}/.installed"
-  end
-  def install
-    default_install
   end
 
   def caveats; <<-EOS.undent

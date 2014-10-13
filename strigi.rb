@@ -21,8 +21,7 @@ class Strigi < BaseKdeFormula
   def install
     ENV['CLUCENE_HOME'] = HOMEBREW_PREFIX
     ENV['EXPAT_HOME'] = '/usr/'
-
-    default_install
+    super
   end
 end
 
