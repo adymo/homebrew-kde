@@ -9,7 +9,7 @@ class Attica < Formula
   depends_on 'qt' => ["with-d-bus", "with-qt3support"]
 
   def install
-    system "cmake #{std_cmake_parameters} ."
+    system "cmake", ".", *std_cmake_args
     system "make install"
   end
 end

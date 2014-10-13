@@ -16,7 +16,7 @@ class KdePhonon < Formula
   def install
     inreplace 'cmake/FindPhononInternal.cmake',
         'BAD_ALLOCATOR AND NOT WIN32', 'BAD_ALLOCATOR AND NOT APPLE'
-    system "cmake #{std_cmake_parameters} ."
+    system "cmake", ".", *std_cmake_args
     system "make install"
   end
 end
