@@ -56,18 +56,14 @@ class Calligra < Formula
     cmake_args << "-DBUILD_doc=false"
     cmake_args << "-DKDE_DEFAULT_HOME=Library/Preferences/Calligra"
 
-    kdedirs = "KDEDIRS=#{prefix}"
-
     resource("kdelibs-stripped").stage do
       mkdir "build" do
-        system "export #{kdedirs}"
         system "cmake", "-DBUNDLE_INSTALL_DIR=.", *cmake_args
         system "make", "install"
       end
     end
 
     mkdir "build" do
-      system "export #{kdedirs}"
       system "cmake", "-DBUNDLE_INSTALL_DIR=#{bin}",
                       "-DPRODUCTSET=OSX",
                       *cmake_args
