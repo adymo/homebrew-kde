@@ -65,7 +65,7 @@ class BaseKdeFormula < Formula
   end
 
   def build_arch
-    if ARGV.build_universal?
+    if build.universal?
       'i386;x86_64'
     elsif MacOS.prefer_64_bit?
       'x86_64'
