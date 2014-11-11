@@ -10,4 +10,9 @@ class Kdepimlibs < BaseKdeFormula
   depends_on 'akonadi'
   depends_on 'libical'
   kde_build_deps
+  
+  def extra_cmake_args
+    "-DLDAP_INCLUDE_DIR=/usr/include/"
+  end
+
 end
