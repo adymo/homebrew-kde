@@ -11,11 +11,7 @@ class Strigi < BaseKdeFormula
   depends_on 'exiv2' => :optional
 
   def patches
-    if MacOS.version >= :mavericks
-      # Fix "reference to 'mutex' is ambiguous" error
-      # MacPorts issue: https://trac.macports.org/ticket/41152
-      {:p0 => 'https://trac.macports.org/raw-attachment/ticket/41152/patch-libstreamanalyzer-plugins-endplugins-ffmpegendanalyzer.cpp.diff'}
-    end
+    DATA
   end
 
   def extra_cmake_args
@@ -29,3 +25,37 @@ class Strigi < BaseKdeFormula
     default_install
   end
 end
+
+__END__
+--- a/libstreamanalyzer/plugins/endplugins/ffmpegendanalyzer.cpp
++++ b/libstreamanalyzer/plugins/endplugins/ffmpegendanalyzer.cpp
+@@ -56,22 +56,22 @@
+     signed char analyze(AnalysisResult& idx, ::InputStream* in);
+ };
+ 
+-STRIGI_MUTEX_DEFINE(mutex);
++STRIGI_MUTEX_DEFINE(strigi_mutex);
+ 
+ static int
+ lockmgr(void **mtx, enum AVLockOp op) {
+   // pre-allocating a single mutex is the only way to get it to work without changing strigi_thread.h
+-  assert( (*mtx == &mutex) || (op == AV_LOCK_CREATE) );
++  assert( (*mtx == &strigi_mutex) || (op == AV_LOCK_CREATE) );
+   switch(op) {
+   case AV_LOCK_CREATE:
+-    *mtx = &mutex;
+-    return !!STRIGI_MUTEX_INIT(&mutex);
++    *mtx = &strigi_mutex;
++    return !!STRIGI_MUTEX_INIT(&strigi_mutex);
+   case AV_LOCK_OBTAIN:
+-    return !!STRIGI_MUTEX_LOCK(&mutex);
++    return !!STRIGI_MUTEX_LOCK(&strigi_mutex);
+   case AV_LOCK_RELEASE:
+-    return !!STRIGI_MUTEX_UNLOCK(&mutex);
++    return !!STRIGI_MUTEX_UNLOCK(&strigi_mutex);
+   case AV_LOCK_DESTROY:
+-    STRIGI_MUTEX_DESTROY(&mutex);
++    STRIGI_MUTEX_DESTROY(&strigi_mutex);
+     return 0;
+   }
+   return 1;
