@@ -59,3 +59,10 @@ __END__
      return 0;
    }
    return 1;
+--- a/libstreamanalyzer/cmake/FindCLucene1.cmake
++++ b/libstreamanalyzer/cmake/FindCLucene1.cmake
+@@ -5,3 +5,4 @@
+ 
+pkg_check_modules(CLUCENE1 libclucene-core)
+ 
++SET(CLUCENE1_LDFLAGS ${CLUCENE1_LDFLAGS} -lclucene-shared)
