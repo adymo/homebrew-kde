@@ -53,10 +53,6 @@ class Kdelibs < BaseKdeFormula
     nil
   end
 
-  #def extra_cmake_args
-  #  Formula.factory('xz').prefix
-  #end
-
   def install
     opoo "Compile qt formula first with: --with-qtdbus and --with-qt3support flags."
     puts <<-EOS.undent
