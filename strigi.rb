@@ -15,7 +15,7 @@ class Strigi < BaseKdeFormula
   end
 
   def extra_cmake_args
-    "-DENABLE_EXPAT:BOOL=ON"
+    %W[-DENABLE_EXPAT:BOOL=ON]
   end
 
   def install

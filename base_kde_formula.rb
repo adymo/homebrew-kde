@@ -30,6 +30,7 @@ class BaseKdeFormula < Formula
   end
 
   def extra_cmake_args
+    []
   end
   def extra_prefix_path
   end
@@ -56,12 +57,7 @@ class BaseKdeFormula < Formula
       "-DBUILD_doc=FALSE",
       "-DBUNDLE_INSTALL_DIR=#{bin}"
     ]
-    if extra_cmake_args.class == String
-      cmake_args += extra_cmake_args.split
-    elsif extra_cmake_args.class == Array
-      cmake_args += extra_cmake_args
-    end
-    cmake_args
+    cmake_args + extra_cmake_args
   end
 
   def build_arch
