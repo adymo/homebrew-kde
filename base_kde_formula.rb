@@ -5,6 +5,7 @@ class BaseKdeFormula < Formula
   def self.kde_build_deps
     depends_on 'cmake' => :build
     depends_on 'automoc4' => :build
+    depends_on :x11
   end
 
   def kdedir
@@ -71,7 +72,6 @@ class BaseKdeFormula < Formula
   end
 
   def install
-    ENV.x11
     ENV['MAKEFLAGS'] = "-j4"
     mkdir 'build'
     cd 'build'
