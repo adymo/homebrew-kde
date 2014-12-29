@@ -72,7 +72,6 @@ class BaseKdeFormula < Formula
   end
 
   def install
-    ENV['MAKEFLAGS'] = "-j4"
     mkdir 'build'
     cd 'build'
     system "cmake", *kde_default_cmake_args
