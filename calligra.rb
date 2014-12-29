@@ -1,10 +1,5 @@
 require "formula"
 
-class KdelibsStripped < Formula
-  homepage "http://quickgit.kde.org/?p=clones/kdelibs/rempt/kdelibs-stripped.git"
-  url "https://downloads.sourceforge.net/project/kdelibs-stripped/kdelibs-stripped-4.12.zip"
-  sha1 "1c1f4365b7db0bdb1e225e63235e77a604ce7ee8"
-end
 class Calligra < Formula
   homepage "http://www.calligra.org/"
   #url "http://download.kde.org/unstable/calligra-2.7.90/calligra-2.7.90.tar.xz"
@@ -46,6 +41,11 @@ class Calligra < Formula
   depends_on "libetonyek" => :optional
   depends_on "pstoedit" => :optional
 
+  resource "kdelibs-stripped" do
+    url "https://downloads.sourceforge.net/project/kdelibs-stripped/kdelibs-stripped-4.12.zip"
+    sha1 "1c1f4365b7db0bdb1e225e63235e77a604ce7ee8"
+  end
+
   def install
     cmake_args = std_cmake_args
     cmake_args << ".."
@@ -56,21 +56,17 @@ class Calligra < Formula
     cmake_args << "-DBUILD_doc=false"
     cmake_args << "-DKDE_DEFAULT_HOME=Library/Preferences/Calligra"
 
-    kdedirs = "KDEDIRS=#{prefix}"
-
-    KdelibsStripped.new("kdelibs-stripped", Pathname.new(__FILE__).expand_path, :stable).brew do
+    resource("kdelibs-stripped").stage do
       mkdir "build" do
-        system "export #{kdedirs}"
-        system "cmake", *cmake_args, "-DBUNDLE_INSTALL_DIR=."
+        system "cmake", "-DBUNDLE_INSTALL_DIR=.", *cmake_args
         system "make", "install"
       end
     end
 
     mkdir "build" do
-      system "export #{kdedirs}"
-      system "cmake", *cmake_args,
-                      "-DBUNDLE_INSTALL_DIR=#{bin}",
-                      "-DPRODUCTSET=OSX"
+      system "cmake", "-DBUNDLE_INSTALL_DIR=#{bin}",
+                      "-DPRODUCTSET=OSX",
+                      *cmake_args
       system "make", "install"
     end
   end

@@ -12,7 +12,7 @@ class Kdepimlibs < BaseKdeFormula
   kde_build_deps
   
   def extra_cmake_args
-    "-DLDAP_INCLUDE_DIR=/usr/include/"
+    %W[-DLDAP_INCLUDE_DIR=/usr/include/]
   end
 
 end

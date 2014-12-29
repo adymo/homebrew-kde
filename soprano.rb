@@ -18,10 +18,8 @@ class Soprano < Formula
   def install
     ENV['CLUCENE_HOME'] = HOMEBREW_PREFIX
 
-    disabled_options = [
-      "-DSOPRANO_DISABLE_SESAME2_BACKEND=TRUE",
-    ].join(' ')
-    system "cmake #{std_cmake_parameters} #{disabled_options} ."
+    args = std_cmake_args + ["-DSOPRANO_DISABLE_SESAME2_BACKEND=TRUE"]
+    system "cmake", ".", *args
     system "make install"
   end
 end

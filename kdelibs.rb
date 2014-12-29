@@ -35,27 +35,6 @@ class Kdelibs < BaseKdeFormula
       "https://gist.githubusercontent.com/philacs/9297176/raw/08f340d94a91398507ad82a8af6227cc68f0ea29/kaboutdialog-osx-beautifier-kdelibs.diff"
     ]}
   end
-  
-  def extra_cmake_args
-    [
-      "-DWITH_ENCHANT=ON",
-      "-DWITH_Soprano=ON",
-      "-DWITH_lzma=OFF",
-      "-DWITH_Avahi=OFF",
-      "-DWITH_HSPELL=OFF",
-      "-DWITH_FAM=OFF",
-      "-DKJS_FORCE_DISABLE_PCRE=ON",
-      "-DPCRE_CONFIG_STACKRECURSE=ON",
-      "-DPCRE_CONFIG_UTF8=ON",
-      "-DHAVE_PCRE_STACK=ON",
-      "-DHAVE_PCRE_UTF8=ON"
-    ]
-    nil
-  end
-
-  #def extra_cmake_args
-  #  Formula.factory('xz').prefix
-  #end
 
   def install
     opoo "Compile qt formula first with: --with-qtdbus and --with-qt3support flags."
@@ -63,7 +42,7 @@ class Kdelibs < BaseKdeFormula
       Enable QtDBus module (--with-qtdbus) and Qt3Support module (--with-qt3support)
       in qt formula first to avoid errors in kdevplatform and kdevelop formulas.
     EOS
-    default_install
+    super
   end
 
   def caveats; <<-EOS.undent
