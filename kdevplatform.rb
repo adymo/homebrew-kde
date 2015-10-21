@@ -33,7 +33,7 @@ __END__
          ? iface->previousHighlightIndex( index )
          : iface->nextHighlightIndex( index );
 
--    kDebug() << "selecting item" << select << index << newIndex;
-+    // kDebug() << "selecting item" << select << index << newIndex;
+-    kDebug() << "old:" << index << "- new:" << newIndex;
++    //kDebug() << "old:" << index << "- new:" << newIndex;
      activateIndex(newIndex, view, iface);
  }
