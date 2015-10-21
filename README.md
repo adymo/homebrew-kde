@@ -8,9 +8,6 @@ Available stable apps:
 - Konversation
 - Massif Visualizer
 
-Experimental apps:
-- Calligra
-
 Installation
 ------------
 
