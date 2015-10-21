@@ -17,7 +17,7 @@ class Calligra < Formula
   depends_on "boost" => :build
   depends_on "xz" => :build
 
-  depends_on "oxygen-icons"
+  depends_on "adymo/kde/oxygen-icons"
   depends_on "qca"
   depends_on "gsl"
   depends_on "little-cms2"
