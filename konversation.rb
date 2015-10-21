@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class Konversation < BaseKdeFormula
   homepage 'http://konversation.kde.org/'
-  url 'http://download.kde.org/stable/konversation/1.5/src/konversation-1.5.tar.xz'
-  sha1 '3955a43758750b63d84299a9d9a5933b73e5492b'
+  url 'http://download.kde.org/stable/konversation/1.5.1/src/konversation-1.5.1.tar.xz'
+  sha1 '1b69db93d2c0a38b631dd92065fa6e7490ffbfbe'
 
   depends_on 'kdelibs'
   depends_on 'kde-runtime'

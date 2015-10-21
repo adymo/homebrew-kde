@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class KdevelopPython < BaseKdeFormula
   homepage 'http://kdevelop.org/'
-  url 'http://download.kde.org/stable/kdevelop/4.7.0/src/kdev-python-1.7.0.tar.xz'
-  sha1 '559dc7f8c3a69844af92eb581b7205346b2fcd10'
+  url 'http://download.kde.org/stable/kdevelop/4.7.2/src/kdev-python-1.7.2.tar.xz'
+  sha1 'f19923f278130bb9d78f186436dde02470bd3ccb'
 
   def patches
     DATA

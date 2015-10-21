@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class Kate < BaseKdeFormula
   homepage 'http://kate-editor.org'
-  url 'http://download.kde.org/stable/4.14.0/src/kate-4.14.0.tar.xz'
-  sha1 '3b8bead7f5cbfa754ba31f27ddcf6f330decf4d3'
+  url 'http://download.kde.org/stable/4.14.3/src/kate-4.14.3.tar.xz'
+  sha1 'da37195e86b5449fcdfe69a3f7df6373a5da900c'
 
   depends_on 'kdelibs'
   depends_on 'kde-runtime'

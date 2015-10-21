@@ -2,8 +2,8 @@ require 'formula'
 
 class KdePhonon < Formula
   homepage 'http://phonon.kde.org/'
-  url 'http://download.kde.org/stable/phonon/4.7.2/phonon-4.7.2.tar.xz'
-  sha1 '2b98fa96cefbbef53d77dd0e6d830889da367c37'
+  url 'http://download.kde.org/stable/phonon/4.8.3/phonon-4.8.3.tar.xz'
+  sha1 'aac5dc44ae4821e6165c6735b9c6063dd111ac03'
 
   depends_on 'xz' => :build
   depends_on 'cmake' => :build

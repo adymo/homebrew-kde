@@ -2,8 +2,8 @@ require File.join(File.dirname(__FILE__), 'base_kde_formula')
 
 class Kdepimlibs < BaseKdeFormula
   homepage 'http://www.kde.org/'
-  url 'http://download.kde.org/stable/4.14.0/src/kdepimlibs-4.14.0.tar.xz'
-  sha1 'ac6dfd4086b4728e815bec93ce2519c343babf8b'
+  url 'http://download.kde.org/stable/4.14.3/src/kdepimlibs-4.14.3.tar.xz'
+  sha1 'bbfff3ea5775bfb0f1692828c679e549deaf4fb3'
 
   depends_on 'kdelibs'
   depends_on 'gpgme'
