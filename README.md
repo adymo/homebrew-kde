@@ -1,12 +1,16 @@
 Alexander Dymo's Homebrew
 =========================
-Homebrew tap to build KDE apps on Mac OS. Based on https://github.com/somekool/homebrew but actually works. Note, this is not a full KDE distribution. It contains only KDE apps that this project's maintainers actually use.
+Homebrew tap to build KDE 4 apps on Mac OS. Based on https://github.com/somekool/homebrew but actually works. Note, this is not a full KDE distribution. It contains only KDE apps that this project's maintainers actually use.
 
 Available stable apps:
 - KDevelop
 - Kate
 - Konversation
 - Massif Visualizer
+
+If you'd like to try KDE 5 versions, try Harald Fernengel's tap:
+
+https://github.com/haraldF/homebrew-kf5
 
 Installation
 ------------
