@@ -8,9 +8,7 @@ Available stable apps:
 - Konversation
 - Massif Visualizer
 
-If you'd like to try KDE 5 versions, try Harald Fernengel's tap:
-
-https://github.com/haraldF/homebrew-kf5
+If you'd like to try KDE 5 versions, try Harald Fernengel's tap: https://github.com/haraldF/homebrew-kf5
 
 Installation
 ------------
