@@ -87,5 +87,4 @@ Troubleshooting
 * if dbus fails to start, check whether you have `/usr/local/etc/dbus-1/session.d` directory
 * sometimes after App Store run upgrades, `DYLD_LIBRARY_PATH` will be reset, then some plugins will fail to load, run `launchctl setenv DYLD_LIBRARY_PATH /usr/local/kde4/lib:$DYLD_LIBRARY_PATH` in terminal to fix
 * if kbuildsycoca or any other KDE app hangs during start, upgrade d-bus or recompile dbus from sources (installations from bottles was broken at some point, it was missing important configuration files): `brew uninstall dbus && brew install dbus --build-from-source`
-* if grantlee fails to download because of sha mismatch, try `brew install --HEAD grantlee`
 
