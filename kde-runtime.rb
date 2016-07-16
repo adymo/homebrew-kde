@@ -20,7 +20,7 @@ class KdeRuntime < BaseKdeFormula
 
   def extra_cmake_args
     phonon = Formula.factory 'kde-phonon'
-    "-DPHONON_INCLUDE_DIR=#{phonon.include} -DPHONON_LIBRARY=#{phonon.lib}/libphonon.dylib"
+    %W[-DPHONON_INCLUDE_DIR=#{phonon.include} -DPHONON_LIBRARY=#{phonon.lib}/libphonon.dylib]
   end
 end
 
