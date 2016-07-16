@@ -5,6 +5,7 @@ class BaseKdeFormula < Formula
   def self.kde_build_deps
     depends_on 'cmake' => :build
     depends_on 'automoc4' => :build
+    depends_on :x11
   end
 
   def kdedir
@@ -30,11 +31,11 @@ class BaseKdeFormula < Formula
   end
 
   def extra_cmake_args
+    []
   end
   def extra_prefix_path
   end
   def kde_default_cmake_args
-    raise "std_cmake_parameters has changed... #{std_cmake_parameters}, prefix is #{prefix}" if std_cmake_parameters != "-DCMAKE_INSTALL_PREFIX='#{prefix}' -DCMAKE_BUILD_TYPE=None -DCMAKE_FIND_FRAMEWORK=LAST -Wno-dev"
     s = extra_prefix_path
     if s.nil?
       s = kdedir
@@ -57,16 +58,11 @@ class BaseKdeFormula < Formula
       "-DBUILD_doc=FALSE",
       "-DBUNDLE_INSTALL_DIR=#{bin}"
     ]
-    if extra_cmake_args.class == String
-      cmake_args += extra_cmake_args.split
-    elsif extra_cmake_args.class == Array
-      cmake_args += extra_cmake_args
-    end
-    cmake_args
+    cmake_args + extra_cmake_args
   end
 
   def build_arch
-    if ARGV.build_universal?
+    if build.universal?
       'i386;x86_64'
     elsif MacOS.prefer_64_bit?
       'x86_64'
@@ -75,18 +71,13 @@ class BaseKdeFormula < Formula
     end
   end
 
-  def default_install
-    ENV.x11
-    ENV['MAKEFLAGS'] = "-j4"
+  def install
     mkdir 'build'
     cd 'build'
     system "cmake", *kde_default_cmake_args
     system "make"
     system "make install"
     touch "#{prefix}/.installed"
-  end
-  def install
-    default_install
   end
 
   def caveats; <<-EOS.undent
